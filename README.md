@@ -1,4 +1,4 @@
-# webpack
+# xmgmail
 
 ## Project setup
 ```

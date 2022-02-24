@@ -1,25 +1,33 @@
 <template>
   <div id="app">
-    <main-tab-bar class="tab-bar"></main-tab-bar>
-    <router-view></router-view>
+    <keep-alive exclude="Detail">
+      <router-view></router-view>
+    </keep-alive>
+    <main-tab-bar></main-tab-bar>
+    <icon></icon>
+    <svg-icon></svg-icon>
   </div>
 </template>
 
 <script>
-import MainTabBar from 'components/content/mainTabBar/MainTabBar'
+  import MainTabBar from 'content/mainTabbar/MainTabBar'
+  import Icon from 'content/Icon/Icon.vue'
+  import SvgIcon from 'content/Icon/svg.vue'
 
-
-export default {
-  name: 'app',
-  components: {
-    MainTabBar
+  export default {
+    name: 'app',
+    components: {
+      MainTabBar,
+      Icon,
+      SvgIcon
+    }
   }
-}
 </script>
 
 <style>
-@import "assets/css/base.css";
-.tab-bar {
-  z-index: 10;
-}
+  @import "assets/css/base.css";
+
+  #app {
+    position: relative;
+  }
 </style>
